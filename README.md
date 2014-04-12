@@ -9,13 +9,13 @@ The more experts/friends you will find, the more accurate your bets will be. An 
 
 Structure of the programme
 --------------------------
-Datasets
+*Datasets*
 * experts.rda
 * oldprono.txt
 * pronostics.txt
 * resultats.txt
 
-R files
+*R files*
 * algo_prono.R 
 
 This file, given experts.rda / pronostics.txt / resultats.txt makes the predictions for all unplayed match and export them in oldprono.txt. Two different methods (deterministic and random) are used.
@@ -28,12 +28,12 @@ This file, given pronostics.txt / resultats.txt computes weights of all the expe
 
 Use of the programme
 --------------------
-1. Train the algorithm
+1. **Train the algorithm**
 You first need to find a source of regular expert predictions (or to play the game with friends) and to save these predictions in pronostics.txt (see the file for the format). Provide then the actual results of the played matches in resultats.txt (see the file for the format). Once the dataset is created, run the weights.R file (you can for instance use R CMD BATCH weights.R in a terminal).
 
-2. Make predictions
+2. **Make predictions**
 Add new predictions in pronostics.txt and run algo_prono.R. Predictions will be prompted and saved in oldprono.txt.
 
-3. Evaluate the accuracy of the predictions
+3. **Evaluate the accuracy of the predictions**
 Fill the new results in resultats.txt and run weights.R as well as perf_oldprono.R. A pdf picture will allow you to highlight the best experts and the perf_oldprono.R will display which of the deterministic / random method is the most efficient so you can evaluate your own confidence in the predictions of Sunday Bets.
 
