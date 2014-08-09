@@ -1,3 +1,4 @@
+#setwd("Documents/40-paris/00-foot/")
 prono <- read.table(file="pronostics.txt",header=TRUE,sep=";");
 results <- read.table(file="resultats.txt",header=TRUE,sep=";");
 
@@ -30,14 +31,16 @@ for(match_index in 1:nb_matchs){
     print(loosers_name);
     print(experts);
 }
-##weights are ponderated by the amount of prognosticated match
-experts$weights <- experts$weights * (experts$nb_match_played / max(experts$nb_match_played));
+##weights are ponderated by the amount of pronosticated match
+##2/3 of non-played matchs are lost by the player
+experts$weights <- experts$weights * 
+    (1 - eta)**(2/3*(max(experts$nb_match_played) - experts$nb_match_played));
 save(experts,file="experts.rda")
 
 ##plot
 x11();
 barplot(experts$weights,names.arg=experts$expert,
-    main=paste("Weights after ",max(experts$nb_match_played)," played matches"),
-    ylab="Weights")
+    main=paste("Poids après ",max(experts$nb_match_played)," matchs joués"),
+    ylab="Poids")
 dev.copy2pdf(file="experts.pdf");
 dev.off();
