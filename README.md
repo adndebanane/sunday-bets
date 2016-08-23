@@ -5,7 +5,7 @@ This R programme provides a simple (or stupid) implementation of the Weighted Ma
 
 Sport bets made with the help of machine learning frameworks often rely on large datasets of statistics recorded during sport events. The Sunday Bets programme addresses this question from a different point of view and rely exclusively on the advices of some experts. Find expert or friend tips, predict results (only 1/N/2 bets supported) over sport seasons and make better collective choices thanks to this programme (hopefully).
 
-The more experts/friends you will find, the more accurate your bets will be. An interesting project would be to implement this programme in Python and to build a community website providing accurate (or not) predictions.
+The more experts/friends you will find, the more accurate your bets will be. 
 
 Structure of the programme
 --------------------------
